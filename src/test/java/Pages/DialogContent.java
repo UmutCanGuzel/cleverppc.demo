@@ -15,6 +15,24 @@ public class DialogContent extends Parent{
     //US2 locators
     @FindBy(xpath = "//a[@class='login']")
     public WebElement singInButton;
+    @FindBy(css = "[id='email']")
+    public WebElement LoginEmail;
+
+    @FindBy(css = " [id='passwd']")
+    public WebElement LoginPasswrd;
+
+    @FindBy(css = "[id='SubmitLogin']")
+    public WebElement SubmitLogin;
+    @FindBy(css = "[class='account']")
+    public WebElement myHomepage;
+    @FindBy(css = "[class='alert alert-danger']")
+    public WebElement error;
+    @FindBy(css = "[id=passwd]")
+    public WebElement passwrd;
+    @FindBy(className = "header_user_info")
+    public WebElement sign_in;
+
+
     //US3 locators
 
     //US4 locators
@@ -32,8 +50,17 @@ public class DialogContent extends Parent{
         switch (strElement){
             // case "addButton": return this.addButton;
 
-        }
 
+                    case "SingButton":
+                        return this.sign_in;
+                    case "AccountButton":
+                        case "userPassword":
+                        return this.passwrd;
+                    case "RegisterButton":
+                        return this.SubmitLogin;
+                    case "SubmitLogin": return SubmitLogin;
+
+        }
         return null;
     }
 }
